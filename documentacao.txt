@@ -1,0 +1,68 @@
+DOCUMENTAÇÃO DE SOFTWARE — SISTEMA DE LOCAÇÃO
+
+1. Objetivo
+Sistema web simples para cadastro e gerenciamento de clientes, veículos e locações,
+com autenticação de usuários e controle de acesso.
+
+2. Tecnologias
+- PHP 8+
+- MySQL/MariaDB
+- HTML
+- CSS simples
+- XAMPP
+- PDO para acesso ao banco
+
+3. Configuração do banco
+Host: localhost
+Porta: 3307
+Usuário: root
+Senha: vazia
+Banco: locadora
+
+O arquivo locadora_db.sql cria o banco, as tabelas e os registros iniciais.
+
+4. Funcionalidades
+- Login com e-mail e senha.
+- Sessão autenticada com expiração após 30 minutos de inatividade.
+- Cadastro e busca de clientes por nome ou CPF.
+- Cadastro e consulta de veículos.
+- Cadastro de locações associando cliente e veículo.
+- Listagem das locações ordenada pela data de retirada.
+- Logout.
+- Senhas armazenadas com password_hash.
+- Consultas SQL com prepared statements.
+
+5. Regras de negócio atendidas
+- Todas as tabelas possuem pelo menos três registros iniciais.
+- São utilizadas chaves primárias e estrangeiras.
+- A locação relaciona um cliente a um veículo.
+- O veículo usado em uma nova locação passa para indisponível.
+- A data de devolução não pode ser anterior à retirada.
+- Dados exibidos no HTML passam por htmlspecialchars.
+- Acesso às telas internas exige autenticação.
+
+6. Instalação no XAMPP
+1. Inicie Apache e MySQL no XAMPP.
+2. Confira se o MySQL está usando a porta 3307.
+3. Copie a pasta sistema para C:\xampp\htdocs\locadora\
+4. Abra http://localhost/locadora/sistema/login.php
+5. No phpMyAdmin, importe locadora_db.sql.
+6. Entre com:
+   E-mail: admin@locadora.com
+   Senha: 123456
+
+7. Estrutura
+locadora/
+├── locadora_db.sql
+├── documentacao.pdf
+├── diagrama_er.pdf
+└── sistema/
+    ├── config.php
+    ├── auth.php
+    ├── style.css
+    ├── login.php
+    ├── logout.php
+    ├── index.html
+    ├── clientes.php
+    ├── veiculos.php
+    └── locacoes.php

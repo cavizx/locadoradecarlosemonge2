@@ -1,0 +1,18 @@
+* { box-sizing: border-box; }
+body { margin: 0; font-family: Arial, sans-serif; background: #f4f6f8; color: #222; }
+.container { width: 92%; max-width: 1100px; margin: 25px auto; }
+.nav { background: #1f2937; color: white; padding: 14px 4%; display: flex; justify-content: space-between; align-items: center; gap: 15px; }
+.nav a { color: white; text-decoration: none; margin-left: 12px; }
+.card { background: white; padding: 20px; margin-bottom: 20px; border-radius: 6px; box-shadow: 0 1px 4px #ccc; }
+.form { max-width: 450px; margin: 60px auto; }
+input, select { width: 100%; padding: 9px; margin: 6px 0 12px; border: 1px solid #bbb; border-radius: 4px; }
+button, .btn { background: #2563eb; color: white; border: 0; padding: 9px 13px; border-radius: 4px; text-decoration: none; cursor: pointer; display: inline-block; }
+.btn-danger { background: #dc2626; }
+.btn-secondary { background: #6b7280; }
+table { width: 100%; border-collapse: collapse; background: white; }
+th, td { padding: 9px; border-bottom: 1px solid #ddd; text-align: left; }
+th { background: #e5e7eb; }
+.alert { padding: 10px; background: #fee2e2; margin-bottom: 15px; border-radius: 4px; }
+.ok { background: #dcfce7; }
+.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
+@media (max-width: 700px) { .grid { grid-template-columns: 1fr; } .nav { display:block; } .nav a { display:inline-block; margin-top:8px; } }
